@@ -42,10 +42,10 @@
   display: flex;
 }
 #gnb ul li {
+  padding: 0 9px;
 }
 #gnb ul li a {
   font-size: 0.85em;
-  padding: 0 9px;
   color: #fff;
 }
 #gnb ul li a:hover {
@@ -72,6 +72,7 @@
   height: 10px;
   display: inline-block;
   background: url(../img/icons.png) 0 0;
+  margin-left: 5px;
 }
 #gnb ul li:nth-child(3) span {
   background-position: -299px 2px;
@@ -116,7 +117,7 @@ ul.menu li a.bar:after {
   right: 0;
 }
 ul.menu li a:hover {
-  color: red;
+  color: gray;
 }
 ul.menu li:first-child a {
   padding-left: 0;
@@ -153,4 +154,206 @@ h1.logo {
   height: 36px;
   background: url(../img/lip.png) no-repeat center;
   background-size: 80%;
+}
+
+/* nav */
+#nav ul {
+  display: flex;
+  justify-content: space-around;
+  border-top: 5px solid #000;
+}
+#nav ul li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+#nav ul li a {
+  display: block;
+  padding: 18px 0;
+  color: #000;
+}
+#nav ul li a:hover {
+  color: gray;
+}
+
+/* main */
+
+/* main banner */
+.main_banner {
+  display: grid;
+  grid-template-columns: 624px 304px;
+  grid-template-rows: 304px 136px;
+  grid-template-areas:
+    "rolling feature"
+    "rolling event";
+  gap: 16px;
+}
+.rolling_banner {
+  grid-area: rolling;
+}
+.feature_item {
+  grid-area: feature;
+  border: 1px solid #c4c4c4;
+}
+.main_event {
+  grid-area: event;
+  background: url(../img/main_event.png);
+}
+
+.feature_item figcaption {
+  font-family: "Quicksand", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding-top: 10px;
+}
+.feature_item figure.feature_img {
+  text-align: center;
+}
+
+/* item_txt */
+.item_txt {
+}
+.item_txt ul {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+}
+.item_txt ul li {
+  margin-bottom: 3px;
+}
+.item_txt ul li:first-child {
+  font-weight: 800;
+  color: #191919;
+}
+.item_txt ul li:nth-child(2) {
+  color: #9d9d9d;
+
+  /* 한줄 글자 생략 삼총사 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item_txt ul li span.money {
+  color: #191919;
+  font-weight: 800;
+  margin-right: 8px;
+}
+.item_txt ul li span.cancel {
+  color: #9d9d9d;
+  text-decoration: line-through;
+}
+
+/* title */
+.title {
+  height: 46px;
+  border-top: 3px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title h2 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 2em;
+  letter-spacing: 5px;
+  color: #070707;
+}
+/* title 끝 */
+
+/* special_picks */
+.special_picks {
+  margin-top: 50px;
+}
+.pick_menu {
+  border-top: 2px dotted #000;
+}
+.pick_menu ul {
+  display: flex;
+  justify-content: center;
+  border-top: 2px dotted #000;
+}
+.pick_menu ul li {
+  padding: 0 15px;
+}
+.pick_menu ul li a {
+  display: block;
+  padding-top: 15px;
+  position: relative;
+}
+.pick_menu ul li a:hover {
+  border-top: 4px solid #000;
+  /* position: relative;
+  top: -4px; */
+  margin-top: -4px;
+  color: gray;
+}
+#box {
+  width: 100px;
+  height: 100px;
+  border-top: 10px solid #000;
+}
+
+/* 삼각형 만들기 - 가상요소 , 보더의 성질 이용 */
+.triangle::before {
+  content: "";
+  border-top: 5px solid #000;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.pick_menu ul li a:hover .triangle::before {
+  opacity: 1;
+}
+
+.pick_box {
+  display: flex;
+}
+.pick {
+  width: 25%;
+  text-align: center;
+}
+.pick .pick_img {
+  padding: 15px 0;
+}
+.pick_icon {
+  width: 25px;
+  height: 16px;
+  background: url(../img/icons.png) no-repeat 0 0;
+  margin: 0 auto;
+  /* display : inline-block */
+}
+.icon02 {
+  width: 48px;
+  background-position: -50px 0;
+}
+
+.icon04 {
+  background-position: -150px 0;
+}
+
+/* magazine */
+.magazine {
+  margin-top: 50px;
+}
+
+/* brand_focus */
+.brand_focus {
+  margin-top: 50px;
+}
+
+.product_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* BEST CONTENTS */
+.best_contents {
+  mask-type: 50px;
 }
